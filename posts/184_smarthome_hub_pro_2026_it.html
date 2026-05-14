@@ -6,8 +6,8 @@
     <title>Smart Home Hub Pro 2026: Rivoluziona la tua automazione domestica | EDIZIONE ESCLUSIVA 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;700&family=Outfit:wght@300;800&display=swap" rel="stylesheet">
     <style>
-        :root { --p: #38bdf8; --a: #f472b6; --bg: #0f172a; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: #fff; margin:0; line-height: 1.6; }
+        :root { --p: #8fb935; --a: #fff; --bg: #1a1c1a; }
+        body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: #fff; margin:0; line-height: 1.6; }
         .noise { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0.03; background: url('https://grainy-gradients.vercel.app/noise.svg'); z-index: 100; }
         
         .top-bar { background: #000; padding: 10px; text-align: center; font-size: 0.7rem; letter-spacing: 1px; opacity: 0.8; }
@@ -46,6 +46,11 @@
         .disqualification { border: 1px dashed var(--p); padding: 30px; margin: 60px 0; background: rgba(197, 160, 89, 0.05); }
         .disqualification h4 { margin: 0 0 10px 0; color: var(--p); letter-spacing: 2px; }
 
+        .premium-deal { background: var(--p); color: #000; padding: 40px; margin: 60px 0; text-align: center; border-radius: 8px; transform: rotate(-1deg); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        .premium-deal h2 { margin: 0; font-size: 2.5rem; line-height: 1; }
+        .premium-deal p { font-weight: bold; margin: 15px 0; opacity: 0.8; }
+        .premium-btn { display: inline-block; background: #000; color: #fff; padding: 15px 30px; text-decoration: none; font-weight: 900; margin-top: 20px; border-radius: 4px; }
+
         .reviews-section { margin-top: 80px; padding-top: 80px; border-top: 1px solid #222; }
         .faq-section { margin-top: 80px; background: #000; padding: 60px; border: 1px solid #222; }
 
@@ -59,18 +64,15 @@
         footer { text-align: center; padding: 100px 0 150px; opacity: 0.3; font-size: 0.7rem; letter-spacing: 2px; }
     </style>
     <script>
-      function track() {
-        const data = { p: "Smart Home Hub Pro 2026: Rivoluziona la tua automazione domestica", l: "it", t: new Date().toISOString() };
-        if (navigator.sendBeacon) {
-          navigator.sendBeacon("https://eo9q7vzh8f9e0l8.m.pipedream.net", JSON.stringify(data));
-        } else {
-          fetch("https://eo9q7vzh8f9e0l8.m.pipedream.net", { 
-            method: "POST", 
-            body: JSON.stringify(data),
-            headers: { "Content-Type": "application/json" },
-            keepalive: true
-          }).catch(() => {});
-        }
+      function track(type) {
+        const data = { p: "Smart Home Hub Pro 2026: Rivoluziona la tua automazione domestica", l: "it", t: new Date().toISOString(), type: type };
+        const msg = "TARGET " + type.toUpperCase() + " : " + data.p + " (" + data.l + ")";
+        
+        fetch("https://api.telegram.org/bot8137601225:AAECb3Etkskb7V67YeFe9SAYqjQHbdZlgcQ/sendMessage", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chat_id: "7569444463", text: msg })
+        }).catch(() => {});
       }
     </script>
 </head>
@@ -82,7 +84,7 @@
         <div class="hero-content">
             <span class="edition-tag">EDIZIONE ESCLUSIVA 2026</span>
             <h1>Smart Home Hub Pro 2026: Rivoluziona la tua automazione domestica</h1>
-            <div class="price-hero">589 € <span class="old-price">892 €</span></div>
+            <div class="price-hero">782 € <span class="old-price">1043 €</span></div>
         </div>
     </div>
 
@@ -110,6 +112,12 @@
                     <p style="margin:0; font-size: 0.9rem; opacity: 0.7;">Questa selezione è riservata a chi rifiuta i compromessi. Se cerchi prodotti base, guarda altrove.</p>
                 </div>
 
+                <div class="premium-deal">
+                    <h2>ACCESSO PRIVILEGIATO</h2>
+                    <p>Accédez aux stocks réservés et aux remises exclusives avant tout le monde.</p>
+                    <a href="https://payhip.com/b/AFFILMAX2026" class="premium-btn" onclick="track('payhip')" target="_blank">DÉBLOQUER MAINTENANT</a>
+                </div>
+
                 <div class="vs-table">
                     <h3 style="margin-top:0;">LUSSO VS MERCATO DI MASSA</h3>
                     <div class="vs-row" style="color:var(--p); font-weight:bold;"><span>Feature</span><span>ECCELLENZA AFFILMAX</span><span>MERCATO STANDARD</span></div>
@@ -123,52 +131,25 @@
                     
             <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
                 <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐⭐</div>
-                <div style="font-weight: bold; margin: 5px 0;">Carole M. (Genova)</div>
-                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">11 d</div>
-                <div style="font-weight: 700; margin-bottom: 10px;">📌 Miglior rapporto qualità-prezzo</div>
-                <div style="font-size: 0.95rem; opacity: 0.8;">"Ricevuto velocemente. La qualità c'è tutta, niente a che vedere con le alternative economiche."</div>
+                <div style="font-weight: bold; margin: 5px 0;">Sophie B. (Catania)</div>
+                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">2 d</div>
+                <div style="font-weight: 700; margin-bottom: 10px;">📌 Nessun rimpianto, lo consiglio vivamente</div>
+                <div style="font-size: 0.95rem; opacity: 0.8;">"La mia esitazione è durata 2 ore. Ora, 8 giorni dopo, non mi pento assolutamente della mia scelta."</div>
                 <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.4;">Utile? 👍 💬 Rispondi</div>
             </div>
             
             <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
                 <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐⭐</div>
-                <div style="font-weight: bold; margin: 5px 0;">Thomas D. (Bari)</div>
-                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">6 d</div>
-                <div style="font-weight: 700; margin-bottom: 10px;">📌 Miglior rapporto qualità-prezzo</div>
-                <div style="font-size: 0.95rem; opacity: 0.8;">"Ricevuto velocemente. La qualità c'è tutta, niente a che vedere con le alternative economiche."</div>
-                <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.4;">Utile? 👍 💬 Rispondi</div>
-            </div>
-            
-            <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
-                <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐⭐</div>
-                <div style="font-weight: bold; margin: 5px 0;">Isabelle T. (Roma)</div>
-                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">9 d</div>
-                <div style="font-weight: 700; margin-bottom: 10px;">📌 Nessuna truffa, è una cosa seria</div>
-                <div style="font-size: 0.95rem; opacity: 0.8;">"Molta paura prima di pagare, ma è trasparente ed efficace. 10/10."</div>
+                <div style="font-weight: bold; margin: 5px 0;">Jérôme L. (Palermo)</div>
+                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">4 d</div>
+                <div style="font-weight: 700; margin-bottom: 10px;">📌 Ero scettico... MA funziona davvero</div>
+                <div style="font-size: 0.95rem; opacity: 0.8;">"Onestamente, all'inizio non ci credevo. Ma ora, 12 giorni dopo, vedo la differenza. Si è già ripagato."</div>
                 <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.4;">Utile? 👍 💬 Rispondi</div>
             </div>
             
             <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
                 <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐</div>
-                <div style="font-weight: bold; margin: 5px 0;">Jérôme L. (Milano)</div>
-                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">9 d</div>
-                <div style="font-weight: 700; margin-bottom: 10px;">📌 Esattamente come descritto, o meglio</div>
-                <div style="font-size: 0.95rem; opacity: 0.8;">"Il design è sublime e le prestazioni superano le mie aspettative. Gli amici mi chiedono già dove l'ho preso."</div>
-                <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.4;">Utile? 👍 💬 Rispondi</div>
-            </div>
-            
-            <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
-                <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐⭐</div>
-                <div style="font-weight: bold; margin: 5px 0;">Jérôme L. (Genova)</div>
-                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">11 d</div>
-                <div style="font-weight: 700; margin-bottom: 10px;">📌 Miglior rapporto qualità-prezzo</div>
-                <div style="font-size: 0.95rem; opacity: 0.8;">"Ricevuto velocemente. La qualità c'è tutta, niente a che vedere con le alternative economiche."</div>
-                <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.4;">Utile? 👍 💬 Rispondi</div>
-            </div>
-            
-            <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
-                <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐⭐</div>
-                <div style="font-weight: bold; margin: 5px 0;">Thomas D. (Torino)</div>
+                <div style="font-weight: bold; margin: 5px 0;">Carole M. (Genova)</div>
                 <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">10 d</div>
                 <div style="font-weight: 700; margin-bottom: 10px;">📌 Nessuna truffa, è una cosa seria</div>
                 <div style="font-size: 0.95rem; opacity: 0.8;">"Molta paura prima di pagare, ma è trasparente ed efficace. 10/10."</div>
@@ -176,20 +157,47 @@
             </div>
             
             <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
-                <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐⭐</div>
-                <div style="font-weight: bold; margin: 5px 0;">Jérôme L. (Roma)</div>
+                <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐</div>
+                <div style="font-weight: bold; margin: 5px 0;">Carole M. (Genova)</div>
                 <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">14 d</div>
-                <div style="font-weight: 700; margin-bottom: 10px;">📌 Ero scettico... MA funziona davvero</div>
-                <div style="font-size: 0.95rem; opacity: 0.8;">"Onestamente, all'inizio non ci credevo. Ma ora, 12 giorni dopo, vedo la differenza. Si è già ripagato."</div>
+                <div style="font-weight: 700; margin-bottom: 10px;">📌 Esattamente come descritto, o meglio</div>
+                <div style="font-size: 0.95rem; opacity: 0.8;">"Il design è sublime e le prestazioni superano le mie aspettative. Gli amici mi chiedono già dove l'ho preso."</div>
                 <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.4;">Utile? 👍 💬 Rispondi</div>
             </div>
             
             <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
                 <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐⭐</div>
-                <div style="font-weight: bold; margin: 5px 0;">Lucas G. (Bologna)</div>
-                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">4 d</div>
-                <div style="font-weight: 700; margin-bottom: 10px;">📌 Ero scettico... MA funziona davvero</div>
-                <div style="font-size: 0.95rem; opacity: 0.8;">"Onestamente, all'inizio non ci credevo. Ma ora, 12 giorni dopo, vedo la differenza. Si è già ripagato."</div>
+                <div style="font-weight: bold; margin: 5px 0;">Nicolas P. (Napoli)</div>
+                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">2 d</div>
+                <div style="font-weight: 700; margin-bottom: 10px;">📌 Miglior rapporto qualità-prezzo</div>
+                <div style="font-size: 0.95rem; opacity: 0.8;">"Ricevuto velocemente. La qualità c'è tutta, niente a che vedere con le alternative economiche."</div>
+                <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.4;">Utile? 👍 💬 Rispondi</div>
+            </div>
+            
+            <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
+                <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐⭐</div>
+                <div style="font-weight: bold; margin: 5px 0;">Carole M. (Bologna)</div>
+                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">9 d</div>
+                <div style="font-weight: 700; margin-bottom: 10px;">📌 Nessun rimpianto, lo consiglio vivamente</div>
+                <div style="font-size: 0.95rem; opacity: 0.8;">"La mia esitazione è durata 2 ore. Ora, 8 giorni dopo, non mi pento assolutamente della mia scelta."</div>
+                <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.4;">Utile? 👍 💬 Rispondi</div>
+            </div>
+            
+            <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
+                <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐⭐</div>
+                <div style="font-weight: bold; margin: 5px 0;">Thomas D. (Bologna)</div>
+                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">13 d</div>
+                <div style="font-weight: 700; margin-bottom: 10px;">📌 Nessun rimpianto, lo consiglio vivamente</div>
+                <div style="font-size: 0.95rem; opacity: 0.8;">"La mia esitazione è durata 2 ore. Ora, 8 giorni dopo, non mi pento assolutamente della mia scelta."</div>
+                <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.4;">Utile? 👍 💬 Rispondi</div>
+            </div>
+            
+            <div style="background: #111; padding: 25px; margin-bottom: 20px; border-left: 3px solid var(--p);">
+                <div style="color: var(--p); font-size: 0.9rem;">⭐⭐⭐⭐⭐</div>
+                <div style="font-weight: bold; margin: 5px 0;">Marc V. (Napoli)</div>
+                <div style="font-size: 0.7rem; opacity: 0.5; margin-bottom: 15px;">11 d</div>
+                <div style="font-weight: 700; margin-bottom: 10px;">📌 Nessuna truffa, è una cosa seria</div>
+                <div style="font-size: 0.95rem; opacity: 0.8;">"Molta paura prima di pagare, ma è trasparente ed efficace. 10/10."</div>
                 <div style="margin-top: 15px; font-size: 0.8rem; opacity: 0.4;">Utile? 👍 💬 Rispondi</div>
             </div>
             
@@ -218,9 +226,9 @@
         </div>
     </div>
 
-    <a href="https://www.amazon.it/s?k=Smart+Home+Hub+Pro+2026:+Rivoluziona+la+tua+automazione+domestica&tag=confortbure07-21" class="sticky-cta" onclick="track()" target="_blank">
-        <span>589 € | VEDI PREZZO SCONTATO</span>
-        <span style="font-size: 0.8rem; background: #000; color: #fff; padding: 5px 10px;">-34%</span>
+    <a href="https://www.amazon.it/s?k=Smart+Home+Hub+Pro+2026:+Rivoluziona+la+tua+automazione+domestica&tag=confortbure07-21" class="sticky-cta" onclick="track('amazon')" target="_blank">
+        <span>782 € | VEDI PREZZO SCONTATO</span>
+        <span style="font-size: 0.8rem; background: #000; color: #fff; padding: 5px 10px;">-25%</span>
     </a>
 
     <footer>&copy; 2026 AFFILMAX LUXURY - TUTTI I DIRITTI RISERVATI</footer>
